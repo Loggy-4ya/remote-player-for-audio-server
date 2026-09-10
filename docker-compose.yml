@@ -1,0 +1,8 @@
+services:
+  remote-vlc-player:
+    build: .
+    environment:
+      - PULSE_SERVER=tcp:host.docker.internal:4713
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+    restart: unless-stopped
